@@ -12,6 +12,7 @@ const secondEl = document.querySelector('[data-seconds]');
 startBtn.disabled = true;
 
 let intervalId = null;
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -33,7 +34,7 @@ const options = {
       intervalId = setInterval(() => {
         let timeLeft = selectedDates[0] - new Date();
 
-        if ((timeLeft = 0)) {
+        if (timeLeft <= 0) {
           clearInterval(intervalId);
         }
 

@@ -8,7 +8,7 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-intevralChangeColor = null;
+let intevralChangeColor = null;
 
 btnStart.addEventListener('click', changeColor);
 btnStop.addEventListener('click', stopBtn);
