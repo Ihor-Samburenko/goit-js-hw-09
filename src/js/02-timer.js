@@ -34,15 +34,13 @@ const options = {
       intervalId = setInterval(() => {
         let timeLeft = selectedDates[0] - new Date();
 
-        if (timeLeft <= 0) {
-          clearInterval(intervalId);
-        }
-
-        const result = convertMs(timeLeft);
-        console.log(result);
-        timerStyle(result);
-        inputEl.disabled = true;
-        startBtn.disabled = true;
+        if (timeLeft > 0) {
+          const result = convertMs(timeLeft);
+          console.log(result);
+          timerStyle(result);
+          inputEl.disabled = true;
+          startBtn.disabled = true;
+        } else clearInterval(timeLeft);
       }, 1000);
     });
   },
